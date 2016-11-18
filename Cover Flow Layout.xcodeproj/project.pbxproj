@@ -13,6 +13,8 @@
 		1F22E3811DDE353B008CE8F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F22E37F1DDE353B008CE8F9 /* Main.storyboard */; };
 		1F22E3831DDE353B008CE8F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F22E3821DDE353B008CE8F9 /* Assets.xcassets */; };
 		1F22E3861DDE353B008CE8F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F22E3841DDE353B008CE8F9 /* LaunchScreen.storyboard */; };
+		1F22E38F1DDE35DD008CE8F9 /* CustomCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F22E38E1DDE35DD008CE8F9 /* CustomCollectionViewController.m */; };
+		1F22E3921DDE366A008CE8F9 /* CoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F22E3911DDE366A008CE8F9 /* CoverFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		1F22E3821DDE353B008CE8F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F22E3851DDE353B008CE8F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F22E3871DDE353B008CE8F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F22E38D1DDE35DD008CE8F9 /* CustomCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewController.h; sourceTree = "<group>"; };
+		1F22E38E1DDE35DD008CE8F9 /* CustomCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewController.m; sourceTree = "<group>"; };
+		1F22E3901DDE366A008CE8F9 /* CoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverFlowLayout.h; sourceTree = "<group>"; };
+		1F22E3911DDE366A008CE8F9 /* CoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 				1F22E37A1DDE353B008CE8F9 /* AppDelegate.m */,
 				1F22E37C1DDE353B008CE8F9 /* ViewController.h */,
 				1F22E37D1DDE353B008CE8F9 /* ViewController.m */,
+				1F22E38D1DDE35DD008CE8F9 /* CustomCollectionViewController.h */,
+				1F22E38E1DDE35DD008CE8F9 /* CustomCollectionViewController.m */,
+				1F22E3901DDE366A008CE8F9 /* CoverFlowLayout.h */,
+				1F22E3911DDE366A008CE8F9 /* CoverFlowLayout.m */,
 				1F22E37F1DDE353B008CE8F9 /* Main.storyboard */,
 				1F22E3821DDE353B008CE8F9 /* Assets.xcassets */,
 				1F22E3841DDE353B008CE8F9 /* LaunchScreen.storyboard */,
@@ -151,7 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F22E37E1DDE353B008CE8F9 /* ViewController.m in Sources */,
+				1F22E3921DDE366A008CE8F9 /* CoverFlowLayout.m in Sources */,
 				1F22E37B1DDE353B008CE8F9 /* AppDelegate.m in Sources */,
+				1F22E38F1DDE35DD008CE8F9 /* CustomCollectionViewController.m in Sources */,
 				1F22E3781DDE353B008CE8F9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
