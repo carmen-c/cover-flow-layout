@@ -24,33 +24,45 @@
 }
 
 -(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
-    NSArray *attributes = [super layoutAttributesForElementsInRect:rect];
+    NSArray *original = [super layoutAttributesForElementsInRect:rect];
+    NSArray * attributes = [[NSArray alloc] initWithArray:original copyItems:YES];
     
     CGRect visibleRegion;
     visibleRegion.origin = self.collectionView.contentOffset;
     visibleRegion.size = self.collectionView.bounds.size;
-//
-//    for (UICollectionViewLayoutAttributes *attribute in attributes) {
-//        CGFloat x = attribute.center.x;
-//        CGFloat f = [self getScaleFactor:x];
-//        
-//        attribute.transform3D = CATransform3DMakeScale(f, 1, 1);
-//        attribute.alpha = f;
-//        
-//    }
+    CGFloat center = self.collectionView.center.x;
     
-    
-//    CATransform3D CATransform3DMakeScale(CGFloat sx, CGFloat sy, CGFloat sz);
-//    (sx, sy, sz)': * t' = [f 0 0 0; 0 f 0 0; 0 0 f 0; 0 0 0 1].
-//
-//
-    return attributes;
+    for (UICollectionViewLayoutAttributes *attribute in attributes) {
+        
 
+        CGFloat distance = CGRectGetMidX(visibleRegion) - attribute.center.x;
+        CGFloat d = distance / center;
+        
+        if (ABS(distance) < center) {
+          
+            CGFloat zoom = 1 + (0.75 * (1 - ABS(d)));
+            CATransform3D zoomTransform = CATransform3DMakeScale(zoom, zoom, 1.0);
+            attribute.transform3D = zoomTransform;
+            
+            CGFloat alphaValue = (1 - ABS(d)) + 0.1;
+            if (alphaValue > 1) alphaValue = 1;
+            attribute.alpha = alphaValue;
+            
+            attribute.zIndex = (1-ABS(d))*10;
+        }
+        else
+        {
+            attribute.alpha = 0;
+        }
+ 
+    }
+
+    return attributes;
 }
 
-//-(CGFloat)getScaleFactor:(CGFloat)x {
-//    CGFloat minSize = 0.8;
-//    CGFloat mid = self.collectionView.center.x;
-//    return minSize + ((1 - minSize) * (fabs(x - mid) /mid));
-//}
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    return YES;
+}
+
+
 @end
