@@ -34,7 +34,7 @@
     
     for (UICollectionViewLayoutAttributes *attribute in attributes) {
         
-
+/*
         CGFloat distance = CGRectGetMidX(visibleRegion) - attribute.center.x;
         CGFloat d = distance / center;
         
@@ -54,7 +54,7 @@
         {
             attribute.alpha = 0;
         }
- 
+ */
     }
 
     return attributes;
